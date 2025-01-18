@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useCart } from '../context/CartContext';
 import { useTheme } from '../context/ThemeContext';
@@ -7,17 +7,8 @@ import LanguageSelector from './LanguageSelector';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const { t } = useTranslation();
   const { cartItemCount } = useCart();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const navItems = [
     { href: '#apartments', label: t('nav.apartments') },
@@ -28,26 +19,40 @@ const Navbar = () => {
     { href: '#contact', label: t('nav.contact') },
   ];
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-black py-4' : 'bg-transparent py-6'}`}>
+    <nav className="bg-black fixed w-full z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <span className="text-2xl font-bold text-white">RIF LAND</span>
+            <button 
+              onClick={scrollToTop}
+              className="text-lime-400 font-bold text-xl hover:text-lime-300 transition-colors duration-300"
+            >
+              RIF LAND
+            </button>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="text-white hover:text-lime-400 transition-colors duration-300"
-              >
-                {item.label}
-              </a>
-            ))}
+          <div className="hidden md:flex items-center justify-center flex-1">
+            <div className="flex items-baseline space-x-8">
+              {navItems.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className="text-white hover:text-lime-400 transition-colors duration-300"
+                >
+                  {item.label}
+                </a>
+              ))}
+            </div>
           </div>
 
           {/* Right side items */}
@@ -74,19 +79,6 @@ const Navbar = () => {
             <LanguageSelector />
             <ThemeToggle />
             <button
-              onClick={() => setIsOpen(true)}
-              className="relative text-white hover:text-lime-400 transition-colors duration-300"
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-              </svg>
-              {cartItemCount > 0 && (
-                <span className="absolute -top-2 -right-2 bg-lime-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                  {cartItemCount}
-                </span>
-              )}
-            </button>
-            <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-white hover:text-lime-400 transition-colors duration-300"
             >
@@ -99,17 +91,19 @@ const Navbar = () => {
 
         {/* Mobile menu */}
         {isOpen && (
-          <div className="md:hidden mt-4">
-            {navItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="block py-2 text-white hover:text-lime-400 transition-colors duration-300"
-                onClick={() => setIsOpen(false)}
-              >
-                {item.label}
-              </a>
-            ))}
+          <div className="md:hidden">
+            <div className="px-2 pt-2 pb-3 space-y-1">
+              {navItems.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className="text-white hover:text-lime-400 block px-3 py-2 transition-colors duration-300"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.label}
+                </a>
+              ))}
+            </div>
           </div>
         )}
       </div>

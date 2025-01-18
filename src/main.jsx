@@ -1,11 +1,10 @@
+import './i18n';
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
 import './index.css'
-import './i18n'
-import { BookingProvider } from './context/BookingContext'
-import { CartProvider } from './context/CartContext'
 import { ThemeProvider } from './context/ThemeContext'
+import { CartProvider } from './context/CartContext'
 import { LanguageProvider } from './context/LanguageContext'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -13,9 +12,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <LanguageProvider>
       <ThemeProvider>
         <CartProvider>
-          <BookingProvider>
-            <App />
-          </BookingProvider>
+          <App />
         </CartProvider>
       </ThemeProvider>
     </LanguageProvider>

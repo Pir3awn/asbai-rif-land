@@ -11,7 +11,7 @@
     "welcome": "Welcome to RIF LAND",
     "subtitle": "Discover the beauty of nature",
     "organic": "Organic Farming",
-    "sustainable": "Sustainable and eco-friendly practices",
+    "sustainable": "Sustainable & Eco-friendly Practices",
     "getaway": "Your Perfect Getaway",
     "relax": "Relax in the heart of nature"
   },
@@ -20,21 +20,104 @@
     "description": "Discover comfort and tranquility in our carefully designed apartments. Each space offers unique views and amenities for an unforgettable stay.",
     "perNight": "/ night",
     "bookNow": "Book Now",
-    "features": "Features"
+    "features": "Features",
+    "luxurySuite": {
+      "title": "Luxury Farm Suite",
+      "description": "Spacious suite with panoramic views of the farm and mountains",
+      "features": {
+        "kingBed": "King bed",
+        "fullKitchen": "Full kitchen",
+        "privateBalcony": "Private balcony",
+        "mountainView": "Mountain view"
+      }
+    },
+    "familyCottage": {
+      "title": "Family Cottage",
+      "description": "Perfect for families, with direct access to farm activities",
+      "features": {
+        "bedrooms": "2 Bedrooms",
+        "kitchen": "Kitchen",
+        "livingRoom": "Living room",
+        "farmView": "Farm view"
+      }
+    },
+    "gardenStudio": {
+      "title": "Garden Studio",
+      "description": "Cozy studio apartment surrounded by our organic gardens",
+      "features": {
+        "queenBed": "Queen bed",
+        "kitchenette": "Kitchenette",
+        "gardenAccess": "Garden access",
+        "privatePatio": "Private patio"
+      }
+    }
   },
   "camping": {
     "title": "Camping Sites",
     "description": "Connect with nature in our beautiful camping areas. Each site offers unique features and stunning views of the surrounding landscape.",
     "perNight": "/ night",
     "bookNow": "Book Now",
-    "features": "Features"
+    "features": "Features",
+    "mountainSite": {
+      "title": "Mountain View Site",
+      "description": "Premium camping spot with panoramic mountain views",
+      "features": {
+        "mountainView": "Mountain view",
+        "firePit": "Fire pit",
+        "picnicTable": "Picnic table",
+        "waterAccess": "Water access"
+      }
+    },
+    "riversideCamp": {
+      "title": "Riverside Camp",
+      "description": "Peaceful camping area along the river",
+      "features": {
+        "riverAccess": "River access",
+        "shadedArea": "Shaded area",
+        "bbqGrill": "BBQ grill",
+        "parkingSpot": "Parking spot"
+      }
+    },
+    "forestRetreat": {
+      "title": "Forest Retreat",
+      "description": "Secluded camping spot in our private forest",
+      "features": {
+        "forestView": "Forest view",
+        "privacy": "Privacy",
+        "fireRing": "Fire ring",
+        "tentPlatform": "Tent platform"
+      }
+    }
   },
   "cafe": {
     "title": "Farm Cafe",
-    "description": "Discover the taste of nature in our cozy cafe. Enjoy fresh coffee, homemade pastries, and light meals while admiring the beautiful farm landscape.",
+    "description": "Discover the taste of nature in our cozy cafe. Enjoy fresh coffee, homemade pastries, and light meals while taking in the beautiful farm views.",
     "openingHours": "Opening Hours",
     "daily": "Daily: 8:00 AM - 8:00 PM",
-    "makeReservation": "Make a Reservation"
+    "makeReservation": "Make a Reservation",
+    "order": "Order Now",
+    "menu": {
+      "moroccanBreakfast": {
+        "title": "Moroccan Breakfast",
+        "description": "Traditional Moroccan breakfast with fresh bread, olive oil, honey, and mint tea",
+        "category": "Breakfast"
+      },
+      "farmSalad": {
+        "title": "Farm Fresh Salad",
+        "description": "Organic salad with vegetables from our farm",
+        "category": "Lunch"
+      },
+      "tajine": {
+        "title": "Tajine",
+        "description": "Traditional Moroccan tajine with seasonal vegetables",
+        "category": "Dinner"
+      },
+      "mintTea": {
+        "title": "Mint Tea",
+        "description": "Fresh mint tea with local herbs",
+        "category": "Drinks"
+      }
+    }
   },
   "products": {
     "title": "Farm Products",
@@ -45,13 +128,28 @@
   },
   "parcels": {
     "title": "Land Parcels",
-    "description": "Invest in your piece of paradise with our premium land parcels",
+    "description": "Invest in your piece of paradise with our premium parcels",
     "features": "Features",
     "price": "Price",
     "requestInfo": "Request Information",
     "interested": "Interested in a Parcel?",
     "contactSpecialist": "Contact our specialists for detailed information and tours",
-    "scheduleVisit": "Schedule a Visit"
+    "scheduleVisit": "Schedule a Visit",
+    "inquire": "Inquire Now",
+    "mountainView": "Mountain View Parcel",
+    "mountainViewDesc": "Premium land parcel with panoramic mountain views",
+    "valleyView": "Valley View Parcel",
+    "valleyViewDesc": "Beautiful land parcel overlooking the valley",
+    "forestView": "Forest View Parcel",
+    "forestViewDesc": "Secluded land parcel surrounded by forest",
+    "feature": {
+      "mountainView": "Mountain view",
+      "valleyView": "Valley view",
+      "forestView": "Forest view",
+      "waterAccess": "Water access",
+      "electricity": "Electricity ready",
+      "roadAccess": "Road access"
+    }
   },
   "contact": {
     "title": "Contact Us",
@@ -64,7 +162,17 @@
       "subject": "Subject",
       "message": "Message",
       "send": "Send Message"
-    }
+    },
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email",
+    "phone": "Phone",
+    "subject": "Subject",
+    "message": "Message",
+    "send": "Send",
+    "address": "Address",
+    "hours": "Opening Hours",
+    "daily": "Daily: 8:00 AM - 8:00 PM"
   },
   "booking": {
     "title": "Book {{name}}",
@@ -113,10 +221,19 @@
       "email": "Email: contact@rifland.com"
     },
     "quickLinks": {
-      "title": "Quick Links"
+      "title": "Quick Links",
+      "apartments": "Apartments",
+      "camping": "Camping",
+      "cafe": "Cafe",
+      "products": "Products",
+      "parcels": "Parcels"
     },
     "social": {
       "title": "Follow Us"
+    },
+    "about": {
+      "title": "About RIF LAND",
+      "description": "Your perfect destination for relaxation and natural beauty"
     },
     "rights": "© {{year}} RIF LAND. All rights reserved."
   }

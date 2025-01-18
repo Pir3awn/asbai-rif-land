@@ -20,21 +20,104 @@
     "description": "اكتشف الراحة والهدوء في شققنا المجهزة بعناية. كل مساحة تقدم إطلالات فريدة ووسائل راحة لإقامة لا تُنسى.",
     "perNight": "/ ليلة",
     "bookNow": "احجز الآن",
-    "features": "المميزات"
+    "features": "المميزات",
+    "luxurySuite": {
+      "title": "جناح فاخر في المزرعة",
+      "description": "جناح فسيح مع إطلالات بانورامية على المزرعة والجبال",
+      "features": {
+        "kingBed": "سرير كينج",
+        "fullKitchen": "مطبخ كامل",
+        "privateBalcony": "شرفة خاصة",
+        "mountainView": "إطلالة على الجبال"
+      }
+    },
+    "familyCottage": {
+      "title": "كوخ عائلي",
+      "description": "مثالي للعائلات، مع وصول مباشر إلى أنشطة المزرعة",
+      "features": {
+        "bedrooms": "غرفتي نوم",
+        "kitchen": "مطبخ",
+        "livingRoom": "غرفة معيشة",
+        "farmView": "إطلالة على المزرعة"
+      }
+    },
+    "gardenStudio": {
+      "title": "استوديو الحديقة",
+      "description": "استوديو مريح محاط بحدائقنا العضوية",
+      "features": {
+        "queenBed": "سرير كوين",
+        "kitchenette": "مطبخ صغير",
+        "gardenAccess": "وصول للحديقة",
+        "privatePatio": "فناء خاص"
+      }
+    }
   },
   "camping": {
     "title": "مواقع التخييم",
     "description": "تواصل مع الطبيعة في مواقع التخييم الجميلة لدينا. كل موقع يقدم ميزات فريدة وإطلالات خلابة على المناظر الطبيعية المحيطة.",
     "perNight": "/ ليلة",
     "bookNow": "احجز الآن",
-    "features": "المميزات"
+    "features": "المميزات",
+    "mountainSite": {
+      "title": "موقع إطلالة الجبل",
+      "description": "موقع تخييم مميز مع إطلالات بانورامية على الجبال",
+      "features": {
+        "mountainView": "إطلالة على الجبال",
+        "firePit": "موقد نار",
+        "picnicTable": "طاولة نزهة",
+        "waterAccess": "وصول للمياه"
+      }
+    },
+    "riversideCamp": {
+      "title": "مخيم على ضفة النهر",
+      "description": "منطقة تخييم هادئة على طول النهر",
+      "features": {
+        "riverAccess": "وصول للنهر",
+        "shadedArea": "منطقة مظللة",
+        "bbqGrill": "شواية",
+        "parkingSpot": "موقف سيارات"
+      }
+    },
+    "forestRetreat": {
+      "title": "ملاذ الغابة",
+      "description": "موقع تخييم منعزل في غابتنا الخاصة",
+      "features": {
+        "forestView": "إطلالة على الغابة",
+        "privacy": "خصوصية",
+        "fireRing": "حلقة نار",
+        "tentPlatform": "منصة خيمة"
+      }
+    }
   },
   "cafe": {
     "title": "مقهى المزرعة",
     "description": "اكتشف طعم الطبيعة في مقهانا الدافئ. استمتع بالقهوة الطازجة والمخبوزات المنزلية والوجبات الخفيفة أثناء مشاهدة المناظر الخلابة للمزرعة.",
     "openingHours": "ساعات العمل",
     "daily": "يومياً: 8:00 صباحاً - 8:00 مساءً",
-    "makeReservation": "احجز طاولة"
+    "makeReservation": "احجز طاولة",
+    "order": "اطلب الآن",
+    "menu": {
+      "moroccanBreakfast": {
+        "title": "فطور مغربي",
+        "description": "فطور مغربي تقليدي مع خبز طازج وزيت زيتون وعسل وشاي بالنعناع",
+        "category": "فطور"
+      },
+      "farmSalad": {
+        "title": "سلطة المزرعة الطازجة",
+        "description": "سلطة عضوية مع خضروات من مزرعتنا",
+        "category": "غداء"
+      },
+      "tajine": {
+        "title": "طاجين",
+        "description": "طاجين مغربي تقليدي مع خضروات موسمية",
+        "category": "عشاء"
+      },
+      "mintTea": {
+        "title": "شاي بالنعناع",
+        "description": "شاي بالنعناع الطازج مع أعشاب محلية",
+        "category": "مشروبات"
+      }
+    }
   },
   "products": {
     "title": "منتجات المزرعة",
@@ -51,7 +134,22 @@
     "requestInfo": "اطلب معلومات",
     "interested": "مهتم بقطعة أرض؟",
     "contactSpecialist": "تواصل مع متخصصينا للحصول على معلومات مفصلة وجولات",
-    "scheduleVisit": "جدول زيارة"
+    "scheduleVisit": "جدول زيارة",
+    "inquire": "استفسر الآن",
+    "mountainView": "قطعة أرض بإطلالة جبلية",
+    "mountainViewDesc": "قطعة أرض مميزة مع إطلالات بانورامية على الجبال",
+    "valleyView": "قطعة أرض بإطلالة على الوادي",
+    "valleyViewDesc": "قطعة أرض جميلة تطل على الوادي",
+    "forestView": "قطعة أرض بإطلالة على الغابة",
+    "forestViewDesc": "قطعة أرض هادئة محاطة بالغابة",
+    "feature": {
+      "mountainView": "إطلالة على الجبال",
+      "valleyView": "إطلالة على الوادي",
+      "forestView": "إطلالة على الغابة",
+      "waterAccess": "وصول للمياه",
+      "electricity": "كهرباء جاهزة",
+      "roadAccess": "وصول للطريق"
+    }
   },
   "contact": {
     "title": "اتصل بنا",
@@ -64,7 +162,17 @@
       "subject": "الموضوع",
       "message": "الرسالة",
       "send": "إرسال الرسالة"
-    }
+    },
+    "firstName": "الاسم الأول",
+    "lastName": "اسم العائلة",
+    "email": "البريد الإلكتروني",
+    "phone": "رقم الهاتف",
+    "subject": "الموضوع",
+    "message": "الرسالة",
+    "send": "إرسال",
+    "address": "العنوان",
+    "hours": "ساعات العمل",
+    "daily": "يومياً: 8:00 صباحاً - 8:00 مساءً"
   },
   "booking": {
     "title": "حجز {{name}}",
@@ -113,11 +221,20 @@
       "email": "البريد الإلكتروني: contact@rifland.com"
     },
     "quickLinks": {
-      "title": "روابط سريعة"
+      "title": "روابط سريعة",
+      "apartments": "الشقق",
+      "camping": "التخييم",
+      "cafe": "المقهى",
+      "products": "المنتجات",
+      "parcels": "القطع الأرضية"
     },
     "social": {
       "title": "تابعنا"
     },
-    "rights": "© {{year}} ريف لاند. جميع الحقوق محفوظة."
+    "rights": "© {{year}} ريف لاند. جميع الحقوق محفوظة.",
+    "about": {
+      "title": "عن ريف لاند",
+      "description": "وجهتك المثالية للاسترخاء والاستمتاع بجمال الطبيعة"
+    }
   }
 } 

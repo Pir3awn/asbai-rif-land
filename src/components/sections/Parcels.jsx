@@ -1,58 +1,69 @@
-import pc from '../../assets/images/pc.png'
+import { useTranslation } from 'react-i18next'
+import { useState } from 'react'
+import BookingModal from '../booking/BookingModal'
 
 const Parcels = () => {
+  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false)
+  const [selectedParcel, setSelectedParcel] = useState(null)
+  const { t } = useTranslation()
+
   const parcels = [
     {
       id: 1,
-      title: 'Mountain View Parcel',
-      size: '1000 m²',
-      price: '50,000€',
+      titleKey: 'parcels.mountainView',
+      descriptionKey: 'parcels.mountainViewDesc',
+      price: '500,000 DH',
+      image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80',
       features: [
-        'Mountain View',
-        'Natural Water Source',
-        'Road Access',
-        'Electricity Available'
+        'parcels.feature.mountainView',
+        'parcels.feature.waterAccess',
+        'parcels.feature.electricity',
+        'parcels.feature.roadAccess'
       ],
-      description: 'Perfect plot for building your dream mountain home',
-      image: pc,
+      size: '1000m²'
     },
     {
       id: 2,
-      title: 'Farmland Plot',
-      size: '2500 m²',
-      price: '75,000€',
+      titleKey: 'parcels.valleyView',
+      descriptionKey: 'parcels.valleyViewDesc',
+      price: '450,000 DH',
+      image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80',
       features: [
-        'Fertile Soil',
-        'Irrigation System',
-        'Farm Equipment Access',
-        'Storage Facility'
+        'parcels.feature.valleyView',
+        'parcels.feature.waterAccess',
+        'parcels.feature.electricity',
+        'parcels.feature.roadAccess'
       ],
-      description: 'Ideal for agricultural activities and farming',
-      image: pc,
+      size: '900m²'
     },
     {
       id: 3,
-      title: 'Riverside Land',
-      size: '1500 m²',
-      price: '65,000€',
+      titleKey: 'parcels.forestView',
+      descriptionKey: 'parcels.forestViewDesc',
+      price: '400,000 DH',
+      image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80',
       features: [
-        'River Access',
-        'Flat Terrain',
-        'Private Road',
-        'Utilities Ready'
+        'parcels.feature.forestView',
+        'parcels.feature.waterAccess',
+        'parcels.feature.electricity',
+        'parcels.feature.roadAccess'
       ],
-      description: 'Beautiful plot with river access and peaceful surroundings',
-      image: pc,
+      size: '800m²'
     }
   ]
 
+  const handleBookClick = (parcel) => {
+    setSelectedParcel(parcel)
+    setIsBookingModalOpen(true)
+  }
+
   return (
-    <section id="parcels" className="py-20 bg-white">
+    <section id="parcels" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-black mb-4">Land Parcels</h2>
+          <h2 className="text-4xl font-bold text-black mb-4">{t('parcels.title')}</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Invest in your piece of paradise with our premium land parcels
+            {t('parcels.description')}
           </p>
         </div>
 
@@ -60,72 +71,68 @@ const Parcels = () => {
           {parcels.map((parcel) => (
             <div
               key={parcel.id}
-              className="bg-white rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition-shadow duration-300"
+              className="bg-white rounded-xl shadow-xl overflow-hidden transform hover:scale-[1.02] transition-transform duration-300"
             >
-              <div className="relative h-64">
+              <div className="aspect-w-16 aspect-h-9">
                 <img
                   src={parcel.image}
-                  alt={parcel.title}
-                  className="w-full h-full object-cover"
+                  alt={t(parcel.titleKey)}
+                  className="w-full h-48 object-cover"
                 />
-                <div className="absolute top-4 right-4 bg-lime-500 text-white px-4 py-2 rounded-full">
-                  {parcel.size}
-                </div>
               </div>
-
               <div className="p-6">
-                <h3 className="text-2xl font-semibold text-black mb-2">
-                  {parcel.title}
-                </h3>
-                <p className="text-gray-600 mb-4">{parcel.description}</p>
-
-                <div className="space-y-4">
-                  <div className="flex justify-between items-center border-t border-gray-100 pt-4">
-                    <span className="text-gray-600">Price</span>
-                    <span className="text-2xl font-bold text-black">{parcel.price}</span>
-                  </div>
-
-                  <div className="border-t border-gray-100 pt-4">
-                    <h4 className="font-semibold text-black mb-2">Features:</h4>
-                    <div className="grid grid-cols-1 gap-2">
-                      {parcel.features.map((feature, index) => (
-                        <div key={index} className="flex items-center text-gray-600">
-                          <svg
-                            className="h-5 w-5 text-lime-500 mr-2"
-                            fill="none"
+                <h3 className="text-2xl font-bold text-black mb-2">{t(parcel.titleKey)}</h3>
+                <p className="text-gray-600 mb-4">{t(parcel.descriptionKey)}</p>
+                <div className="mb-4">
+                  <h4 className="text-sm font-semibold text-black mb-2">{t('parcels.features')}:</h4>
+                  <ul className="space-y-1">
+                    {parcel.features.map((feature, index) => (
+                      <li key={index} className="text-gray-600 flex items-center">
+                        <svg
+                          className="w-4 h-4 text-lime-600 mr-2"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
                             strokeLinecap="round"
                             strokeLinejoin="round"
-                            strokeWidth="2"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path d="M5 13l4 4L19 7"></path>
-                          </svg>
-                          {feature}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+                            strokeWidth={2}
+                            d="M5 13l4 4L19 7"
+                          />
+                        </svg>
+                        {t(feature)}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-
-                <button className="mt-6 w-full bg-black text-white py-3 px-4 rounded-lg hover:bg-lime-600 transition-colors duration-300">
-                  Request Information
-                </button>
+                <div className="flex items-center justify-between">
+                  <div>
+                    <span className="text-2xl font-bold text-black">{parcel.price}</span>
+                    <div className="text-sm text-gray-600">{parcel.size}</div>
+                  </div>
+                  <button
+                    onClick={() => handleBookClick(parcel)}
+                    className="bg-black text-white px-6 py-2 rounded-lg hover:bg-lime-600 transform hover:scale-[1.02] transition-all duration-300"
+                  >
+                    {t('parcels.inquire')}
+                  </button>
+                </div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Contact Information */}
-        <div className="mt-16 text-center bg-gray-50 p-8 rounded-xl">
-          <h3 className="text-2xl font-bold text-black mb-4">Interested in a Land Parcel?</h3>
-          <p className="text-gray-600 mb-6">
-            Contact our land specialists for detailed information and site visits
-          </p>
-          <button className="bg-black text-white px-8 py-3 rounded-lg hover:bg-lime-600 transition-colors duration-300">
-            Schedule a Visit
-          </button>
-        </div>
+        {selectedParcel && (
+          <BookingModal
+            isOpen={isBookingModalOpen}
+            onClose={() => setIsBookingModalOpen(false)}
+            type="parcel"
+            itemId={selectedParcel.id}
+            price={selectedParcel.price}
+            title={t(selectedParcel.titleKey)}
+          />
+        )}
       </div>
     </section>
   )
