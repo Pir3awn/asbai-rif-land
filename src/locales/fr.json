@@ -1,0 +1,123 @@
+{
+  "nav": {
+    "apartments": "Appartements",
+    "camping": "Camping",
+    "cafe": "Café",
+    "products": "Produits",
+    "parcels": "Parcelles",
+    "contact": "Contact"
+  },
+  "hero": {
+    "welcome": "Bienvenue à RIF LAND",
+    "subtitle": "Découvrez la beauté de la nature",
+    "organic": "Agriculture Biologique",
+    "sustainable": "Pratiques durables et écologiques",
+    "getaway": "Votre Escapade Parfaite",
+    "relax": "Détendez-vous au cœur de la nature"
+  },
+  "apartments": {
+    "title": "Nos Appartements",
+    "description": "Découvrez le confort et la tranquillité dans nos appartements soigneusement aménagés. Chaque espace offre des vues uniques et des commodités pour un séjour inoubliable.",
+    "perNight": "/ nuit",
+    "bookNow": "Réserver",
+    "features": "Caractéristiques"
+  },
+  "camping": {
+    "title": "Sites de Camping",
+    "description": "Connectez-vous avec la nature dans nos magnifiques zones de camping. Chaque site offre des caractéristiques uniques et des vues imprenables sur le paysage environnant.",
+    "perNight": "/ nuit",
+    "bookNow": "Réserver",
+    "features": "Caractéristiques"
+  },
+  "cafe": {
+    "title": "Café de la Ferme",
+    "description": "Découvrez le goût de la nature dans notre café chaleureux. Savourez un café frais, des pâtisseries maison et des repas légers tout en admirant le magnifique paysage de la ferme.",
+    "openingHours": "Heures d'Ouverture",
+    "daily": "Tous les jours : 8h00 - 20h00",
+    "makeReservation": "Faire une Réservation"
+  },
+  "products": {
+    "title": "Produits de la Ferme",
+    "description": "Produits frais et biologiques directement de notre ferme à votre table",
+    "addToCart": "Ajouter au Panier",
+    "subscribe": "Vous souhaitez recevoir régulièrement nos produits frais ?",
+    "subscribeButton": "S'abonner au Panier Hebdomadaire"
+  },
+  "parcels": {
+    "title": "Parcelles de Terrain",
+    "description": "Investissez dans votre coin de paradis avec nos parcelles premium",
+    "features": "Caractéristiques",
+    "price": "Prix",
+    "requestInfo": "Demander des Informations",
+    "interested": "Intéressé par une Parcelle ?",
+    "contactSpecialist": "Contactez nos spécialistes pour des informations détaillées et des visites",
+    "scheduleVisit": "Planifier une Visite"
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "description": "Des questions ? Nous aimerions avoir de vos nouvelles. Envoyez-nous un message et nous vous répondrons dès que possible.",
+    "form": {
+      "firstName": "Prénom",
+      "lastName": "Nom",
+      "email": "Email",
+      "phone": "Numéro de Téléphone",
+      "subject": "Sujet",
+      "message": "Message",
+      "send": "Envoyer le Message"
+    }
+  },
+  "booking": {
+    "title": "Réserver {{name}}",
+    "form": {
+      "firstName": "Prénom",
+      "lastName": "Nom",
+      "email": "Email",
+      "phone": "Téléphone",
+      "checkIn": "Date d'Arrivée",
+      "checkOut": "Date de Départ",
+      "guests": "Nombre de Personnes",
+      "submit": "Réserver Maintenant",
+      "processing": "En cours..."
+    },
+    "errors": {
+      "required": "{{field}} est requis",
+      "email": "Adresse email invalide",
+      "dates": {
+        "past": "La date d'arrivée ne peut pas être dans le passé",
+        "invalid": "La date de départ doit être après la date d'arrivée",
+        "maxStay": "La durée maximale de séjour est de 30 jours",
+        "unavailable": "Les dates sélectionnées ne sont pas disponibles"
+      },
+      "guests": {
+        "min": "Au moins 1 personne est requise",
+        "max": "Maximum 10 personnes autorisées"
+      }
+    }
+  },
+  "cart": {
+    "title": "Panier",
+    "empty": "Votre panier est vide",
+    "quantity": "Qté",
+    "remove": "Supprimer",
+    "subtotal": "Sous-total",
+    "shipping": "Frais de livraison et taxes calculés à la caisse",
+    "checkout": "Commander",
+    "continueShopping": "Continuer les Achats"
+  },
+  "footer": {
+    "contact": {
+      "title": "Contactez-nous",
+      "address": "123 Chemin de la Ferme",
+      "location": "Région du Rif, Maroc",
+      "phone": "Téléphone : +212 123-456789",
+      "email": "Email : contact@rifland.com"
+    },
+    "quickLinks": {
+      "title": "Liens Rapides"
+    },
+    "social": {
+      "title": "Suivez-nous"
+    },
+    "rights": "© {{year}} RIF LAND. Tous droits réservés."
+  }
+} 

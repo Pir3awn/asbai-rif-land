@@ -1,0 +1,123 @@
+{
+  "nav": {
+    "apartments": "Apartments",
+    "camping": "Camping",
+    "cafe": "Cafe",
+    "products": "Products",
+    "parcels": "Parcels",
+    "contact": "Contact"
+  },
+  "hero": {
+    "welcome": "Welcome to RIF LAND",
+    "subtitle": "Discover the beauty of nature",
+    "organic": "Organic Farming",
+    "sustainable": "Sustainable and eco-friendly practices",
+    "getaway": "Your Perfect Getaway",
+    "relax": "Relax in the heart of nature"
+  },
+  "apartments": {
+    "title": "Our Apartments",
+    "description": "Discover comfort and tranquility in our carefully designed apartments. Each space offers unique views and amenities for an unforgettable stay.",
+    "perNight": "/ night",
+    "bookNow": "Book Now",
+    "features": "Features"
+  },
+  "camping": {
+    "title": "Camping Sites",
+    "description": "Connect with nature in our beautiful camping areas. Each site offers unique features and stunning views of the surrounding landscape.",
+    "perNight": "/ night",
+    "bookNow": "Book Now",
+    "features": "Features"
+  },
+  "cafe": {
+    "title": "Farm Cafe",
+    "description": "Discover the taste of nature in our cozy cafe. Enjoy fresh coffee, homemade pastries, and light meals while admiring the beautiful farm landscape.",
+    "openingHours": "Opening Hours",
+    "daily": "Daily: 8:00 AM - 8:00 PM",
+    "makeReservation": "Make a Reservation"
+  },
+  "products": {
+    "title": "Farm Products",
+    "description": "Fresh and organic products directly from our farm to your table",
+    "addToCart": "Add to Cart",
+    "subscribe": "Want to receive our fresh products regularly?",
+    "subscribeButton": "Subscribe to Weekly Basket"
+  },
+  "parcels": {
+    "title": "Land Parcels",
+    "description": "Invest in your piece of paradise with our premium land parcels",
+    "features": "Features",
+    "price": "Price",
+    "requestInfo": "Request Information",
+    "interested": "Interested in a Parcel?",
+    "contactSpecialist": "Contact our specialists for detailed information and tours",
+    "scheduleVisit": "Schedule a Visit"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "description": "Questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.",
+    "form": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "phone": "Phone Number",
+      "subject": "Subject",
+      "message": "Message",
+      "send": "Send Message"
+    }
+  },
+  "booking": {
+    "title": "Book {{name}}",
+    "form": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "phone": "Phone",
+      "checkIn": "Check-in Date",
+      "checkOut": "Check-out Date",
+      "guests": "Number of Guests",
+      "submit": "Book Now",
+      "processing": "Processing..."
+    },
+    "errors": {
+      "required": "{{field}} is required",
+      "email": "Invalid email address",
+      "dates": {
+        "past": "Check-in date cannot be in the past",
+        "invalid": "Check-out date must be after check-in date",
+        "maxStay": "Maximum stay duration is 30 days",
+        "unavailable": "Selected dates are not available"
+      },
+      "guests": {
+        "min": "At least 1 guest is required",
+        "max": "Maximum 10 guests allowed"
+      }
+    }
+  },
+  "cart": {
+    "title": "Shopping Cart",
+    "empty": "Your cart is empty",
+    "quantity": "Qty",
+    "remove": "Remove",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping and taxes calculated at checkout",
+    "checkout": "Checkout",
+    "continueShopping": "Continue Shopping"
+  },
+  "footer": {
+    "contact": {
+      "title": "Contact Us",
+      "address": "123 Farm Road",
+      "location": "Rif Region, Morocco",
+      "phone": "Phone: +212 123-456789",
+      "email": "Email: contact@rifland.com"
+    },
+    "quickLinks": {
+      "title": "Quick Links"
+    },
+    "social": {
+      "title": "Follow Us"
+    },
+    "rights": "© {{year}} RIF LAND. All rights reserved."
+  }
+} 
