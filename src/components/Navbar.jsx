@@ -6,9 +6,9 @@ import ThemeToggle from './ThemeToggle';
 import LanguageSelector from './LanguageSelector';
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { t } = useTranslation();
-  const { cartItemCount } = useCart();
+  const { itemCount, setIsOpen: setCartOpen } = useCart();
 
   const navItems = [
     { href: '#apartments', label: t('nav.apartments') },
@@ -60,15 +60,15 @@ const Navbar = () => {
             <LanguageSelector />
             <ThemeToggle />
             <button
-              onClick={() => setIsOpen(true)}
+              onClick={() => setCartOpen(true)}
               className="relative text-white hover:text-lime-400 transition-colors duration-300"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
               </svg>
-              {cartItemCount > 0 && (
+              {itemCount > 0 && (
                 <span className="absolute -top-2 -right-2 bg-lime-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                  {cartItemCount}
+                  {itemCount}
                 </span>
               )}
             </button>
@@ -79,7 +79,7 @@ const Navbar = () => {
             <LanguageSelector />
             <ThemeToggle />
             <button
-              onClick={() => setIsOpen(!isOpen)}
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-white hover:text-lime-400 transition-colors duration-300"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -90,7 +90,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile menu */}
-        {isOpen && (
+        {isMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navItems.map((item) => (
@@ -98,7 +98,7 @@ const Navbar = () => {
                   key={item.href}
                   href={item.href}
                   className="text-white hover:text-lime-400 block px-3 py-2 transition-colors duration-300"
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label}
                 </a>

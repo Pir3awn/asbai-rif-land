@@ -58,6 +58,8 @@
     "perNight": "/ night",
     "bookNow": "Book Now",
     "features": "Features",
+    "maxGuests": "{{count}} guests max",
+    "checkIn": "Check-in at {{time}}",
     "mountainSite": {
       "title": "Mountain View Site",
       "description": "Premium camping spot with panoramic mountain views",
@@ -123,8 +125,56 @@
     "title": "Farm Products",
     "description": "Fresh and organic products directly from our farm to your table",
     "addToCart": "Add to Cart",
-    "subscribe": "Want to receive our fresh products regularly?",
-    "subscribeButton": "Subscribe to Weekly Basket"
+    "buyNow": "Buy Now",
+    "quickView": "Quick View",
+    "quantity": "Quantity",
+    "total": "Total",
+    "stock": "Stock",
+    "outOfStock": "Out of Stock",
+    "features": "Features",
+    "category": "Category",
+    "categories": {
+      "nuts": "Nuts",
+      "fruits": "Fruits",
+      "honey": "Honey",
+      "oils": "Oils"
+    },
+    "almonds": {
+      "title": "Natural Almonds",
+      "description": "Premium hand-picked organic almonds from our farm",
+      "features": {
+        "organic": "100% Organic",
+        "handPicked": "Hand Picked",
+        "premium": "Premium Quality"
+      }
+    },
+    "grapes": {
+      "title": "Fresh Grapes",
+      "description": "Sweet and juicy organic grapes",
+      "features": {
+        "fresh": "Freshly Harvested",
+        "organic": "Organic Farming",
+        "sweet": "Naturally Sweet"
+      }
+    },
+    "honey": {
+      "title": "Pure Honey",
+      "description": "Raw and natural honey from our beehives",
+      "features": {
+        "pure": "100% Pure",
+        "raw": "Raw Honey",
+        "natural": "All Natural"
+      }
+    },
+    "oil": {
+      "title": "Olive Oil",
+      "description": "Extra virgin cold-pressed olive oil",
+      "features": {
+        "extraVirgin": "Extra Virgin",
+        "coldPressed": "Cold Pressed",
+        "organic": "Organic Olives"
+      }
+    }
   },
   "parcels": {
     "title": "Land Parcels",
@@ -236,5 +286,8 @@
       "description": "Your perfect destination for relaxation and natural beauty"
     },
     "rights": "© {{year}} RIF LAND. All rights reserved."
+  },
+  "common": {
+    "close": "Close"
   }
 } 

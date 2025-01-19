@@ -123,6 +123,20 @@
     "title": "Produits de la Ferme",
     "description": "Produits frais et biologiques directement de notre ferme à votre table",
     "addToCart": "Ajouter au Panier",
+    "buyNow": "Acheter Maintenant",
+    "quickView": "Aperçu Rapide",
+    "quantity": "Quantité",
+    "total": "Total",
+    "stock": "Stock",
+    "outOfStock": "Rupture de Stock",
+    "features": "Caractéristiques",
+    "category": "Catégorie",
+    "categories": {
+      "nuts": "Fruits Secs",
+      "fruits": "Fruits",
+      "honey": "Miel",
+      "oils": "Huiles"
+    },
     "subscribe": "Vous souhaitez recevoir régulièrement nos produits frais ?",
     "subscribeButton": "S'abonner au Panier Hebdomadaire"
   },

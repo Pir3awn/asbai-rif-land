@@ -1,17 +1,13 @@
 import { Fragment } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
+import { XMarkIcon } from '@heroicons/react/24/outline'
+import { useTranslation } from 'react-i18next'
 import { useCart } from '../context/CartContext'
+import { Button } from './shared'
 
 const Cart = () => {
-  const {
-    isOpen,
-    setIsOpen,
-    items,
-    removeFromCart,
-    updateQuantity,
-    clearCart,
-    getCartTotal,
-  } = useCart()
+  const { t } = useTranslation()
+  const { items, isOpen, setIsOpen, removeFromCart, updateQuantity, formattedTotal } = useCart()
 
   return (
     <Transition.Root show={isOpen} as={Fragment}>
@@ -25,7 +21,7 @@ const Cart = () => {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <div className="fixed inset-0 bg-black bg-opacity-75 transition-opacity" />
+          <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
         </Transition.Child>
 
         <div className="fixed inset-0 overflow-hidden">
@@ -45,7 +41,7 @@ const Cart = () => {
                     <div className="flex-1 overflow-y-auto px-4 py-6 sm:px-6">
                       <div className="flex items-start justify-between">
                         <Dialog.Title className="text-lg font-medium text-gray-900">
-                          Shopping cart
+                          {t('cart.title')}
                         </Dialog.Title>
                         <div className="ml-3 flex h-7 items-center">
                           <button
@@ -54,34 +50,20 @@ const Cart = () => {
                             onClick={() => setIsOpen(false)}
                           >
                             <span className="absolute -inset-0.5" />
-                            <span className="sr-only">Close panel</span>
-                            <svg
-                              className="h-6 w-6"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              strokeWidth="1.5"
-                              stroke="currentColor"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                d="M6 18L18 6M6 6l12 12"
-                              />
-                            </svg>
+                            <span className="sr-only">{t('common.close')}</span>
+                            <XMarkIcon className="h-6 w-6" aria-hidden="true" />
                           </button>
                         </div>
                       </div>
 
                       <div className="mt-8">
-                        <div className="flow-root">
-                          {items.length === 0 ? (
-                            <p className="text-gray-500 text-center py-8">
-                              Your cart is empty
-                            </p>
-                          ) : (
-                            <ul className="-my-6 divide-y divide-gray-200">
+                        {items.length === 0 ? (
+                          <p className="text-center text-gray-500">{t('cart.empty')}</p>
+                        ) : (
+                          <div className="flow-root">
+                            <ul role="list" className="-my-6 divide-y divide-gray-200">
                               {items.map((item) => (
-                                <li key={`${item.type}-${item.id}`} className="flex py-6">
+                                <li key={item.id} className="flex py-6">
                                   <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                                     <img
                                       src={item.image}
@@ -94,80 +76,59 @@ const Cart = () => {
                                     <div>
                                       <div className="flex justify-between text-base font-medium text-gray-900">
                                         <h3>{item.title}</h3>
-                                        <p className="ml-4">${item.price}</p>
+                                        <p className="ml-4">{item.price}</p>
                                       </div>
-                                      <p className="mt-1 text-sm text-gray-500 capitalize">
-                                        {item.type}
-                                      </p>
                                     </div>
                                     <div className="flex flex-1 items-end justify-between text-sm">
                                       <div className="flex items-center">
-                                        <button
-                                          onClick={() =>
-                                            updateQuantity(
-                                              item.id,
-                                              item.type,
-                                              item.quantity - 1
-                                            )
-                                          }
-                                          className="text-gray-500 hover:text-gray-700"
-                                        >
-                                          -
-                                        </button>
-                                        <span className="mx-2 text-gray-900">
-                                          Qty {item.quantity}
-                                        </span>
-                                        <button
-                                          onClick={() =>
-                                            updateQuantity(
-                                              item.id,
-                                              item.type,
-                                              item.quantity + 1
-                                            )
-                                          }
-                                          className="text-gray-500 hover:text-gray-700"
-                                        >
-                                          +
-                                        </button>
+                                        <label htmlFor={`quantity-${item.id}`} className="mr-2 text-gray-500">
+                                          {t('cart.quantity')}:
+                                        </label>
+                                        <input
+                                          type="number"
+                                          id={`quantity-${item.id}`}
+                                          className="w-16 rounded-md border-gray-300 shadow-sm focus:border-lime-500 focus:ring-lime-500"
+                                          value={item.quantity}
+                                          min="1"
+                                          onChange={(e) => updateQuantity(item.id, parseInt(e.target.value))}
+                                        />
                                       </div>
 
                                       <button
                                         type="button"
-                                        onClick={() => removeFromCart(item.id, item.type)}
+                                        onClick={() => removeFromCart(item.id)}
                                         className="font-medium text-lime-600 hover:text-lime-500"
                                       >
-                                        Remove
+                                        {t('cart.remove')}
                                       </button>
                                     </div>
                                   </div>
                                 </li>
                               ))}
                             </ul>
-                          )}
-                        </div>
+                          </div>
+                        )}
                       </div>
                     </div>
 
                     {items.length > 0 && (
                       <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
                         <div className="flex justify-between text-base font-medium text-gray-900">
-                          <p>Subtotal</p>
-                          <p>${getCartTotal().toFixed(2)}</p>
+                          <p>{t('cart.subtotal')}</p>
+                          <p>{formattedTotal}</p>
                         </div>
                         <p className="mt-0.5 text-sm text-gray-500">
-                          Shipping and taxes calculated at checkout.
+                          {t('cart.shipping')}
                         </p>
                         <div className="mt-6">
-                          <button
+                          <Button
                             onClick={() => {
-                              alert('Checkout functionality coming soon!')
-                              clearCart()
-                              setIsOpen(false)
+                              // Handle checkout
                             }}
-                            className="w-full bg-black text-white px-6 py-3 rounded-lg hover:bg-lime-600 transform hover:scale-[1.02] transition-all duration-300"
+                            className="w-full"
                           >
-                            Checkout
-                          </button>
+                            {t('cart.checkout')}
+                          </Button>
                         </div>
                         <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
                           <button
@@ -175,8 +136,7 @@ const Cart = () => {
                             className="font-medium text-lime-600 hover:text-lime-500"
                             onClick={() => setIsOpen(false)}
                           >
-                            Continue Shopping
-                            <span aria-hidden="true"> &rarr;</span>
+                            {t('cart.continueShopping')}
                           </button>
                         </div>
                       </div>

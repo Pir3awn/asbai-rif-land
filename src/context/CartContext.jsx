@@ -1,4 +1,6 @@
-import { createContext, useContext, useState } from 'react'
+import { createContext, useContext, useState, useEffect } from 'react'
+import PropTypes from 'prop-types'
+import { formatPrice } from '../utils/formatters'
 
 const CartContext = createContext()
 
@@ -11,32 +13,50 @@ export const useCart = () => {
 }
 
 export const CartProvider = ({ children }) => {
+  const [items, setItems] = useState(() => {
+    const savedItems = localStorage.getItem('cart')
+    return savedItems ? JSON.parse(savedItems) : []
+  })
   const [isOpen, setIsOpen] = useState(false)
-  const [items, setItems] = useState([])
+  const [notification, setNotification] = useState(null)
 
-  const addToCart = (item) => {
-    setItems((prev) => {
-      const existingItem = prev.find((i) => i.id === item.id && i.type === item.type)
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(items))
+  }, [items])
+
+  const addToCart = (product) => {
+    setItems(currentItems => {
+      const existingItem = currentItems.find(item => item.id === product.id)
+      
       if (existingItem) {
-        return prev.map((i) =>
-          i.id === item.id && i.type === item.type
-            ? { ...i, quantity: i.quantity + 1 }
-            : i
+        return currentItems.map(item =>
+          item.id === product.id
+            ? { ...item, quantity: item.quantity + (product.quantity || 1) }
+            : item
         )
       }
-      return [...prev, { ...item, quantity: 1 }]
+      
+      return [...currentItems, { ...product, quantity: product.quantity || 1 }]
     })
+
+    // Show notification
+    setNotification({
+      message: `Added ${product.quantity || 1}x ${product.title} to cart`,
+      type: 'success'
+    })
+    setTimeout(() => setNotification(null), 3000)
   }
 
-  const removeFromCart = (itemId, type) => {
-    setItems((prev) => prev.filter((i) => !(i.id === itemId && i.type === type)))
+  const removeFromCart = (productId) => {
+    setItems(currentItems => currentItems.filter(item => item.id !== productId))
   }
 
-  const updateQuantity = (itemId, type, quantity) => {
-    setItems((prev) =>
-      prev.map((item) =>
-        item.id === itemId && item.type === type
-          ? { ...item, quantity: Math.max(0, quantity) }
+  const updateQuantity = (productId, quantity) => {
+    if (quantity < 1) return
+    setItems(currentItems =>
+      currentItems.map(item =>
+        item.id === productId
+          ? { ...item, quantity }
           : item
       )
     )
@@ -46,25 +66,30 @@ export const CartProvider = ({ children }) => {
     setItems([])
   }
 
-  const getCartCount = () => {
-    return items.reduce((total, item) => total + item.quantity, 0)
+  const getTotal = () => {
+    return items.reduce((total, item) => total + (item.price * item.quantity), 0)
   }
 
-  const getCartTotal = () => {
-    return items.reduce((total, item) => total + item.price * item.quantity, 0)
-  }
+  const itemCount = items.reduce((count, item) => count + item.quantity, 0)
 
   const value = {
-    isOpen,
-    setIsOpen,
     items,
+    isOpen,
+    notification,
+    itemCount,
     addToCart,
     removeFromCart,
     updateQuantity,
     clearCart,
-    getCartCount,
-    getCartTotal,
+    setIsOpen,
+    formattedTotal: formatPrice(getTotal())
   }
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>
-} 
+}
+
+CartProvider.propTypes = {
+  children: PropTypes.node.isRequired,
+}
+
+export default CartProvider 

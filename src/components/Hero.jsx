@@ -1,23 +1,25 @@
 import { useState, useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
+  const { t } = useTranslation()
 
   const slides = [
     {
-      url: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3',
-      title: 'Welcome to RIF LAND',
-      subtitle: 'Experience the beauty of nature',
+      url: '/hero1.jpg',
+      titleKey: 'hero.welcome',
+      subtitleKey: 'hero.subtitle',
     },
     {
-      url: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3',
-      title: 'Organic Farming',
-      subtitle: 'Sustainable and eco-friendly practices',
+      url: '/hero2.jpg',
+      titleKey: 'hero.organic',
+      subtitleKey: 'hero.sustainable',
     },
     {
-      url: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3',
-      title: 'Your Perfect Getaway',
-      subtitle: 'Relax and unwind in nature',
+      url: '/hero3.jpg',
+      titleKey: 'hero.getaway',
+      subtitleKey: 'hero.relax',
     },
   ]
 
@@ -29,7 +31,7 @@ const Hero = () => {
   }, [])
 
   return (
-    <div className="relative h-screen">
+    <section className="relative h-screen">
       {/* Image Slider */}
       <div className="relative h-full overflow-hidden">
         {slides.map((slide, index) => (
@@ -42,14 +44,15 @@ const Hero = () => {
             <div className="absolute inset-0 bg-black/50 z-10" />
             <img
               src={slide.url}
-              alt={slide.title}
+              alt={t(slide.titleKey)}
               className="w-full h-full object-cover"
+              loading={index === 0 ? 'eager' : 'lazy'}
             />
             <div className="absolute inset-0 flex flex-col items-center justify-center text-white z-20">
               <h1 className="text-5xl md:text-6xl font-bold mb-4 text-center">
-                {slide.title}
+                {t(slide.titleKey)}
               </h1>
-              <p className="text-xl md:text-2xl text-lime-400">{slide.subtitle}</p>
+              <p className="text-xl md:text-2xl text-lime-400">{t(slide.subtitleKey)}</p>
             </div>
           </div>
         ))}
@@ -64,10 +67,11 @@ const Hero = () => {
             className={`w-3 h-3 rounded-full transition-colors ${
               index === currentSlide ? 'bg-lime-400' : 'bg-white/50'
             }`}
+            aria-label={`Go to slide ${index + 1}`}
           />
         ))}
       </div>
-    </div>
+    </section>
   )
 }
 
