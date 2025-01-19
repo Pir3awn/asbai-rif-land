@@ -1,74 +1,94 @@
-import { Suspense } from 'react'
+import { Suspense, useState } from 'react'
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom'
+import { AnimatePresence } from 'framer-motion'
 import Navbar from './components/Navbar'
-import Hero from './components/Hero'
 import Footer from './components/Footer'
-import Apartments from './components/sections/Apartments'
-import Camping from './components/sections/Camping'
-import Cafe from './components/sections/Cafe'
-import Products from './components/sections/Products'
-import Parcels from './components/sections/Parcels'
-import Contact from './components/sections/Contact'
 import Cart from './components/Cart'
-import { CartProvider } from './context/CartContext'
-import { ThemeProvider } from './context/ThemeContext'
 import { ErrorBoundary } from './components/shared'
-import { BookingProvider } from './context/BookingContext'
-import { LanguageProvider } from './context/LanguageContext'
+import AppProviders from './context/AppProviders'
+import Loading from './components/shared/Loading'
+import PageTransition from './components/shared/PageTransition'
+import ScrollToTop from './components/shared/ScrollToTop'
+import LoadingBar from './components/shared/LoadingBar'
+import PageMetadata from './components/shared/PageMetadata'
+import { routes } from './routes'
 
-// Loading component for Suspense fallback
-const Loading = () => (
-  <div className="min-h-screen flex items-center justify-center">
-    <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-lime-600"></div>
+// Layout component
+const Layout = ({ children }) => (
+  <div className="min-h-screen flex flex-col bg-white relative">
+    <Navbar />
+    <Cart />
+    <main className="flex-grow w-full relative">
+      {children}
+    </main>
+    <div className="relative z-10">
+      <Footer />
+    </div>
   </div>
 )
+
+// Route wrapper component
+const RouteWrapper = ({ Component, metadata }) => {
+  const [isLoading, setIsLoading] = useState(false)
+  const location = useLocation()
+  const isHome = location.pathname === '/'
+
+  return (
+    <ErrorBoundary>
+      <PageMetadata {...metadata} />
+      <LoadingBar isLoading={isLoading} />
+      <Suspense
+        fallback={<Loading fullScreen={metadata.fullScreen} />}
+        onLoadStart={() => setIsLoading(true)}
+        onLoadEnd={() => setIsLoading(false)}
+      >
+        <PageTransition>
+          {isHome ? (
+            <Component />
+          ) : (
+            <div className="pt-16">
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                <Component />
+              </div>
+            </div>
+          )}
+        </PageTransition>
+      </Suspense>
+    </ErrorBoundary>
+  )
+}
+
+// AnimatedRoutes component for handling route transitions
+const AnimatedRoutes = () => {
+  const location = useLocation()
+  
+  return (
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        {routes.map(({ path, component: Component, metadata }) => (
+          <Route
+            key={path}
+            path={path}
+            element={<RouteWrapper Component={Component} metadata={metadata} />}
+          />
+        ))}
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </AnimatePresence>
+  )
+}
 
 const App = () => {
   return (
     <ErrorBoundary>
-      <LanguageProvider>
-        <ThemeProvider>
-          <CartProvider>
-            <BookingProvider>
-              <div className="min-h-screen bg-white dark:bg-gray-900">
-                <Navbar />
-                <Cart />
-                <main>
-                  <ErrorBoundary fallback="Failed to load hero section">
-                    <Hero />
-                  </ErrorBoundary>
-
-                  <Suspense fallback={<Loading />}>
-                    <ErrorBoundary fallback="Failed to load apartments section">
-                      <Apartments />
-                    </ErrorBoundary>
-
-                    <ErrorBoundary fallback="Failed to load camping section">
-                      <Camping />
-                    </ErrorBoundary>
-
-                    <ErrorBoundary fallback="Failed to load cafe section">
-                      <Cafe />
-                    </ErrorBoundary>
-
-                    <ErrorBoundary fallback="Failed to load products section">
-                      <Products />
-                    </ErrorBoundary>
-
-                    <ErrorBoundary fallback="Failed to load parcels section">
-                      <Parcels />
-                    </ErrorBoundary>
-
-                    <ErrorBoundary fallback="Failed to load contact section">
-                      <Contact />
-                    </ErrorBoundary>
-                  </Suspense>
-                </main>
-                <Footer />
-              </div>
-            </BookingProvider>
-          </CartProvider>
-        </ThemeProvider>
-      </LanguageProvider>
+      <AppProviders>
+        <BrowserRouter>
+          <ScrollToTop />
+          <Layout>
+            <AnimatedRoutes />
+          </Layout>
+        </BrowserRouter>
+      </AppProviders>
     </ErrorBoundary>
   )
 }

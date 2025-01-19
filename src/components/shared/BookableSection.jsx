@@ -11,7 +11,7 @@ const BookableSection = ({
   descriptionKey,
   items,
   type,
-  background
+  background = 'bg-white'
 }) => {
   const { t } = useTranslation()
   const [selectedItem, setSelectedItem] = useState(null)
@@ -27,7 +27,8 @@ const BookableSection = ({
       imageAlt: t(item.titleKey),
       title: t(item.titleKey),
       description: t(item.descriptionKey),
-      price: `${formatPrice(item.price)} ${t(`${type}.perNight`)}`,
+      price: `${formatPrice(item.price)}`,
+      unit: item.unit,
       features: item.features.map(key => t(key)),
       actions: (
         <button
@@ -72,9 +73,9 @@ const BookableSection = ({
         id={id}
         title={t(titleKey)}
         description={t(descriptionKey)}
-        background={background}
+        background="bg-white"
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-8 max-w-[90rem] mx-auto px-4">
           {items.map((item) => (
             <div key={item.id}>
               {renderCard(item)}
@@ -111,10 +112,6 @@ BookableSection.propTypes = {
   })).isRequired,
   type: PropTypes.oneOf(['apartments', 'camping', 'parcels']).isRequired,
   background: PropTypes.string
-}
-
-BookableSection.defaultProps = {
-  background: 'bg-white'
 }
 
 export default BookableSection 

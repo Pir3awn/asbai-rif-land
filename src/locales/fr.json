@@ -138,13 +138,23 @@
       "oils": "Huiles"
     },
     "subscribe": "Vous souhaitez recevoir régulièrement nos produits frais ?",
-    "subscribeButton": "S'abonner au Panier Hebdomadaire"
+    "subscribeButton": "S'abonner au Panier Hebdomadaire",
+    "figs": {
+      "title": "Figues Fraîches",
+      "description": "Figues douces et juteuses de nos vergers",
+      "features": {
+        "organic": "100% Bio",
+        "premium": "Qualité Premium",
+        "fresh": "Fraîchement Cueillies"
+      }
+    }
   },
   "parcels": {
     "title": "Parcelles de Terrain",
     "description": "Investissez dans votre coin de paradis avec nos parcelles premium",
     "features": "Caractéristiques",
     "price": "Prix",
+    "size": "Superficie",
     "requestInfo": "Demander des Informations",
     "interested": "Intéressé par une Parcelle ?",
     "contactSpecialist": "Contactez nos spécialistes pour des informations détaillées et des visites",

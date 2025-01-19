@@ -174,6 +174,15 @@
         "coldPressed": "Cold Pressed",
         "organic": "Organic Olives"
       }
+    },
+    "figs": {
+      "title": "Fresh Figs",
+      "description": "Sweet and juicy figs from our orchards",
+      "features": {
+        "organic": "100% Organic",
+        "premium": "Premium Quality",
+        "fresh": "Freshly Picked"
+      }
     }
   },
   "parcels": {
@@ -181,6 +190,7 @@
     "description": "Invest in your piece of paradise with our premium parcels",
     "features": "Features",
     "price": "Price",
+    "size": "Size",
     "requestInfo": "Request Information",
     "interested": "Interested in a Parcel?",
     "contactSpecialist": "Contact our specialists for detailed information and tours",

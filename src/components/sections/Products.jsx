@@ -20,6 +20,7 @@ const Products = () => {
       titleKey: 'products.almonds.title',
       descriptionKey: 'products.almonds.description',
       price: 50,
+      unit: '500g',
       image: amande,
       features: [
         'products.almonds.features.organic',
@@ -30,10 +31,26 @@ const Products = () => {
       stock: 100
     },
     {
+      id: 4,
+      titleKey: 'products.oil.title',
+      descriptionKey: 'products.oil.description',
+      price: 80,
+      unit: '750ml',
+      image: oil2,
+      features: [
+        'products.oil.features.extraVirgin',
+        'products.oil.features.coldPressed',
+        'products.oil.features.organic'
+      ],
+      category: 'oils',
+      stock: 75
+    },
+    {
       id: 2,
       titleKey: 'products.grapes.title',
       descriptionKey: 'products.grapes.description',
       price: 30,
+      unit: '1kg',
       image: grape,
       features: [
         'products.grapes.features.fresh',
@@ -48,6 +65,7 @@ const Products = () => {
       titleKey: 'products.honey.title',
       descriptionKey: 'products.honey.description',
       price: 120,
+      unit: '1L',
       image: honey,
       features: [
         'products.honey.features.pure',
@@ -58,18 +76,19 @@ const Products = () => {
       stock: 30
     },
     {
-      id: 4,
-      titleKey: 'products.oil.title',
-      descriptionKey: 'products.oil.description',
-      price: 80,
-      image: oil2,
+      id: 5,
+      titleKey: 'products.figs.title',
+      descriptionKey: 'products.figs.description',
+      price: 45,
+      unit: '500g',
+      image: grape,
       features: [
-        'products.oil.features.extraVirgin',
-        'products.oil.features.coldPressed',
-        'products.oil.features.organic'
+        'products.figs.features.organic',
+        'products.figs.features.premium',
+        'products.figs.features.fresh'
       ],
-      category: 'oils',
-      stock: 75
+      category: 'fruits',
+      stock: 10
     }
   ]
 
@@ -107,8 +126,9 @@ const Products = () => {
       id="products"
       title={t('products.title')}
       description={t('products.description')}
+      className="bg-gray-50"
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-8 max-w-[90rem] mx-auto px-4">
         {products.map((product) => (
           <ProductCard
             key={product.id}
@@ -118,22 +138,28 @@ const Products = () => {
             title={t(product.titleKey)}
             description={t(product.descriptionKey)}
             price={formatPrice(product.price)}
+            unit={product.unit}
             features={product.features.map(feature => t(feature))}
             category={product.category}
             stock={product.stock}
             actions={
-              <div className="flex gap-2">
+              <div className="flex gap-2 w-full">
                 <Button
                   onClick={() => handleAddToCart(product)}
                   disabled={product.stock === 0}
+                  className="flex-1"
                 >
                   {t('products.addToCart')}
                 </Button>
                 <Button
                   variant="secondary"
                   onClick={() => handleQuickView(product)}
+                  className="px-3"
                 >
-                  {t('products.quickView')}
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                  </svg>
                 </Button>
               </div>
             }

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Section, ParcelCard, Button, BookingModal } from '../shared'
 import parcel from '../../assets/images/pc.png'
+import { CheckIcon } from '@heroicons/react/24/outline'
 
 const Parcels = () => {
   const { t } = useTranslation()
@@ -11,45 +12,31 @@ const Parcels = () => {
   const parcels = [
     {
       id: 1,
-      title: t('parcels.mountainView'),
-      description: t('parcels.mountainViewDesc'),
-      price: 500000,
+      titleKey: 'parcels.mountainView',
+      descriptionKey: 'parcels.mountainViewDesc',
+      price: 5000,
+      size: '500m²',
       image: parcel,
       features: [
-        t('parcels.feature.mountainView'),
-        t('parcels.feature.waterAccess'),
-        t('parcels.feature.electricity'),
-        t('parcels.feature.roadAccess')
-      ],
-      size: 1000
+        'parcels.feature.mountainView',
+        'parcels.feature.waterAccess',
+        'parcels.feature.electricity',
+        'parcels.feature.roadAccess'
+      ]
     },
     {
       id: 2,
-      title: t('parcels.valleyView'),
-      description: t('parcels.valleyViewDesc'),
-      price: 450000,
+      titleKey: 'parcels.valleyView',
+      descriptionKey: 'parcels.valleyViewDesc',
+      price: 2500,
+      size: '250m²',
       image: parcel,
       features: [
-        t('parcels.feature.valleyView'),
-        t('parcels.feature.waterAccess'),
-        t('parcels.feature.electricity'),
-        t('parcels.feature.roadAccess')
-      ],
-      size: 900
-    },
-    {
-      id: 3,
-      title: t('parcels.forestView'),
-      description: t('parcels.forestViewDesc'),
-      price: 400000,
-      image: parcel,
-      features: [
-        t('parcels.feature.forestView'),
-        t('parcels.feature.waterAccess'),
-        t('parcels.feature.electricity'),
-        t('parcels.feature.roadAccess')
-      ],
-      size: 800
+        'parcels.feature.valleyView',
+        'parcels.feature.waterAccess',
+        'parcels.feature.electricity',
+        'parcels.feature.roadAccess'
+      ]
     }
   ]
 
@@ -64,24 +51,48 @@ const Parcels = () => {
       title={t('parcels.title')}
       description={t('parcels.description')}
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="flex justify-center items-start gap-8 flex-wrap max-w-7xl mx-auto px-4">
         {parcels.map((parcel) => (
-          <ParcelCard
-            key={parcel.id}
-            id={parcel.id}
-            image={parcel.image}
-            imageAlt={parcel.title}
-            title={parcel.title}
-            description={parcel.description}
-            price={parcel.price}
-            features={parcel.features}
-            size={parcel.size}
-            actions={
-              <Button onClick={() => handleBook(parcel)}>
+          <div key={parcel.id} className="w-full md:w-[480px] bg-white rounded-lg shadow-md overflow-hidden">
+            <div className="relative h-64">
+              <img
+                src={parcel.image}
+                alt={t(parcel.titleKey)}
+                className="object-cover w-full h-full"
+              />
+            </div>
+            <div className="p-6">
+              <h3 className="text-2xl font-semibold mb-2">{t(parcel.titleKey)}</h3>
+              <p className="text-gray-600 mb-4">{t(parcel.descriptionKey)}</p>
+              
+              <div className="flex items-center gap-4 mb-4">
+                <div className="flex-1">
+                  <p className="text-sm text-gray-500">{t('parcels.price')}</p>
+                  <p className="text-2xl font-bold text-lime-600">{parcel.price.toLocaleString()} DH</p>
+                </div>
+                <div className="flex-1">
+                  <p className="text-sm text-gray-500">{t('parcels.size')}</p>
+                  <p className="text-2xl font-bold text-gray-900">{parcel.size}</p>
+                </div>
+              </div>
+
+              <div className="mb-6">
+                <p className="font-medium mb-2">{t('parcels.features')}</p>
+                <ul className="space-y-2">
+                  {parcel.features.map((feature, index) => (
+                    <li key={index} className="flex items-center gap-2 text-gray-600">
+                      <CheckIcon className="w-5 h-5 text-lime-600" />
+                      {t(feature)}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <Button onClick={() => handleBook(parcel)} className="w-full">
                 {t('parcels.inquire')}
               </Button>
-            }
-          />
+            </div>
+          </div>
         ))}
       </div>
 

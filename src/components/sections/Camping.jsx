@@ -10,7 +10,8 @@ const Camping = () => {
       titleKey: 'camping.mountainSite.title',
       descriptionKey: 'camping.mountainSite.description',
       price: 50,
-      image: '/camping/mountain-site.jpg',
+      unit: '/night',
+      image: 'https://images.pexels.com/photos/2666598/pexels-photo-2666598.jpeg',
       features: [
         'camping.mountainSite.features.mountainView',
         'camping.mountainSite.features.firePit',
@@ -24,7 +25,8 @@ const Camping = () => {
       titleKey: 'camping.riversideCamp.title',
       descriptionKey: 'camping.riversideCamp.description',
       price: 45,
-      image: '/camping/riverside-camp.jpg',
+      unit: '/night',
+      image: 'https://images.pexels.com/photos/6271625/pexels-photo-6271625.jpeg',
       features: [
         'camping.riversideCamp.features.riverAccess',
         'camping.riversideCamp.features.shadedArea',
@@ -38,7 +40,8 @@ const Camping = () => {
       titleKey: 'camping.forestRetreat.title',
       descriptionKey: 'camping.forestRetreat.description',
       price: 40,
-      image: '/camping/forest-retreat.jpg',
+      unit: '/night',
+      image: 'https://images.pexels.com/photos/6271651/pexels-photo-6271651.jpeg',
       features: [
         'camping.forestRetreat.features.forestView',
         'camping.forestRetreat.features.privacy',
@@ -56,7 +59,6 @@ const Camping = () => {
       descriptionKey="camping.description"
       items={campingSites}
       type="camping"
-      background="bg-gray-50"
     />
   )
 }
