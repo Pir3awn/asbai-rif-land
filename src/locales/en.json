@@ -58,6 +58,8 @@
     "perNight": "/ night",
     "bookNow": "Book Now",
     "features": "Features",
+    "maxGuests": "{{count}} guests max",
+    "checkIn": "Check-in at {{time}}",
     "mountainSite": {
       "title": "Mountain View Site",
       "description": "Premium camping spot with panoramic mountain views",
@@ -123,14 +125,81 @@
     "title": "Farm Products",
     "description": "Fresh and organic products directly from our farm to your table",
     "addToCart": "Add to Cart",
-    "subscribe": "Want to receive our fresh products regularly?",
-    "subscribeButton": "Subscribe to Weekly Basket"
+    "buyNow": "Buy Now",
+    "quickView": "Quick View",
+    "quantity": "Quantity",
+    "total": "Total",
+    "stock": "Stock",
+    "outOfStock": "Out of Stock",
+    "features": "Features",
+    "category": "Category",
+    "categories": {
+      "nuts": "Nuts",
+      "fruits": "Fruits",
+      "honey": "Honey",
+      "oils": "Oils"
+    },
+    "almonds": {
+      "title": "Natural Almonds",
+      "description": "Premium hand-picked organic almonds from our farm",
+      "features": {
+        "organic": "100% Organic",
+        "handPicked": "Hand Picked",
+        "premium": "Premium Quality"
+      }
+    },
+    "grapes": {
+      "title": "Fresh Grapes",
+      "description": "Sweet and juicy organic grapes",
+      "features": {
+        "fresh": "Freshly Harvested",
+        "organic": "Organic Farming",
+        "sweet": "Naturally Sweet"
+      }
+    },
+    "honey": {
+      "title": "Pure Honey",
+      "description": "Raw and natural honey from our beehives",
+      "features": {
+        "pure": "100% Pure",
+        "raw": "Raw Honey",
+        "natural": "All Natural"
+      }
+    },
+    "oil": {
+      "title": "Olive Oil",
+      "description": "Extra virgin cold-pressed olive oil",
+      "features": {
+        "extraVirgin": "Extra Virgin",
+        "coldPressed": "Cold Pressed",
+        "organic": "Organic Olives"
+      }
+    },
+    "figs": {
+      "title": "Fresh Figs",
+      "description": "Sweet and juicy figs from our orchards",
+      "features": {
+        "organic": "100% Organic",
+        "premium": "Premium Quality",
+        "fresh": "Freshly Picked"
+      }
+    },
+    "olives": {
+      "title": "Fresh Olives",
+      "description": "Fresh and delicious olives from our orchards",
+      "features": {
+        "organic": "100% Organic",
+        "premium": "Premium Quality",
+        "fresh": "Freshly Picked"
+      }
+    }
   },
   "parcels": {
     "title": "Land Parcels",
     "description": "Invest in your piece of paradise with our premium parcels",
     "features": "Features",
     "price": "Price",
+    "size": "Size",
     "requestInfo": "Request Information",
     "interested": "Interested in a Parcel?",
     "contactSpecialist": "Contact our specialists for detailed information and tours",
@@ -215,10 +284,10 @@
   "footer": {
     "contact": {
       "title": "Contact Us",
-      "address": "123 Farm Road",
-      "location": "Rif Region, Morocco",
-      "phone": "Phone: +212 123-456789",
-      "email": "Email: contact@rifland.com"
+      "address": "Al-Aroui",
+      "location": "Nador, Morocco",
+      "phone": "Phone: +212 661-343-472",
+      "email": "Email: asbairifland@gmail.com"
     },
     "quickLinks": {
       "title": "Quick Links",
@@ -235,6 +304,9 @@
       "title": "About RIF LAND",
       "description": "Your perfect destination for relaxation and natural beauty"
     },
-    "rights": "© {{year}} RIF LAND. All rights reserved."
+    "rights": "© RIF LAND. All rights reserved."
+  },
+  "common": {
+    "close": "Close"
   }
 } 

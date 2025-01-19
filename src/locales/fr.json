@@ -123,14 +123,38 @@
     "title": "Produits de la Ferme",
     "description": "Produits frais et biologiques directement de notre ferme à votre table",
     "addToCart": "Ajouter au Panier",
+    "buyNow": "Acheter Maintenant",
+    "quickView": "Aperçu Rapide",
+    "quantity": "Quantité",
+    "total": "Total",
+    "stock": "Stock",
+    "outOfStock": "Rupture de Stock",
+    "features": "Caractéristiques",
+    "category": "Catégorie",
+    "categories": {
+      "nuts": "Fruits Secs",
+      "fruits": "Fruits",
+      "honey": "Miel",
+      "oils": "Huiles"
+    },
     "subscribe": "Vous souhaitez recevoir régulièrement nos produits frais ?",
-    "subscribeButton": "S'abonner au Panier Hebdomadaire"
+    "subscribeButton": "S'abonner au Panier Hebdomadaire",
+    "figs": {
+      "title": "Figues Fraîches",
+      "description": "Figues douces et juteuses de nos vergers",
+      "features": {
+        "organic": "100% Bio",
+        "premium": "Qualité Premium",
+        "fresh": "Fraîchement Cueillies"
+      }
+    }
   },
   "parcels": {
     "title": "Parcelles de Terrain",
     "description": "Investissez dans votre coin de paradis avec nos parcelles premium",
     "features": "Caractéristiques",
     "price": "Prix",
+    "size": "Superficie",
     "requestInfo": "Demander des Informations",
     "interested": "Intéressé par une Parcelle ?",
     "contactSpecialist": "Contactez nos spécialistes pour des informations détaillées et des visites",
@@ -215,10 +239,10 @@
   "footer": {
     "contact": {
       "title": "Contactez-nous",
-      "address": "123 Chemin de la Ferme",
-      "location": "Région du Rif, Maroc",
-      "phone": "Téléphone : +212 123-456789",
-      "email": "Email : contact@rifland.com"
+      "address": "Al-Aroui",
+      "location": "Nador, Maroc",
+      "phone": "Téléphone: +212 661-343-472",
+      "email": "Email: contact@rifland.com"
     },
     "quickLinks": {
       "title": "Liens Rapides",
@@ -235,6 +259,6 @@
       "title": "À propos de RIF LAND",
       "description": "Votre destination idéale pour la détente et la beauté naturelle"
     },
-    "rights": "© {{year}} RIF LAND. Tous droits réservés."
+    "rights": "©RIF LAND. Tous droits réservés."
   }
 } 
