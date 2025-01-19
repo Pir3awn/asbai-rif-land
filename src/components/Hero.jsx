@@ -1,20 +1,30 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
+import { useNavigate } from 'react-router-dom'
+import f1 from '../assets/images/m1.png'
+import m1 from '../assets/images/t1.jpg'
+import g1 from '../assets/images/g1.jpg'
+import t1 from '../assets/images/f1.jpg'
 
 const images = [
   {
-    url: 'https://images.pexels.com/photos/2662116/pexels-photo-2662116.jpeg',
+    url: m1,
     position: 'center',
-    // Majestic mountain peaks with green valleys
+    // Main hero image showing RIF LAND
   },
   {
-    url: 'https://images.pexels.com/photos/1574843/pexels-photo-1574843.jpeg',
+    url: t1,
     position: 'center',
-    // Dramatic mountain landscape with sunset
+    // Traditional Moroccan landscape
   },
   {
-    url: 'https://images.pexels.com/photos/2387873/pexels-photo-2387873.jpeg',
+    url: g1,
+    position: 'center',
+    // Garden and nature view
+  },
+  {
+    url: f1,
     position: 'center',
     // Serene mountain lake surrounded by peaks
   }
@@ -39,6 +49,7 @@ const slideVariants = {
 
 const Hero = () => {
   const { t } = useTranslation()
+  const navigate = useNavigate()
   const [[page, direction], setPage] = useState([0, 0])
   const imageIndex = Math.abs(page % images.length)
 
@@ -49,7 +60,7 @@ const Hero = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       paginate(1)
-    }, 6000)
+    }, 4000)
     return () => clearInterval(timer)
   }, [page])
 
@@ -66,8 +77,8 @@ const Hero = () => {
             animate="center"
             exit="exit"
             transition={{
-              x: { type: "spring", stiffness: 300, damping: 30 },
-              opacity: { duration: 0.2 }
+              x: { type: "spring", stiffness: 300, damping: 25 },
+              opacity: { duration: 0.15 }
             }}
             className="absolute inset-0"
           >
@@ -117,17 +128,18 @@ const Hero = () => {
             transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
             className="relative z-10"
           >
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-lime-400 tracking-tight leading-tight font-display">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-[#00FF1A] tracking-tight leading-tight font-display">
               {t('hero.welcome')} <br className="hidden sm:block" />
             </h1>
-            <p className="mt-4 sm:mt-6 text-lg sm:text-xl lg:text-2xl text-lime-100 font-medium max-w-lg font-display">
+            <p className="mt-4 sm:mt-6 text-lg sm:text-xl lg:text-2xl text-[#00FF1A]/90 font-medium max-w-lg font-display">
               {t('hero.subtitle')}
             </p>
             <div className="mt-8 sm:mt-10">
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="px-8 py-4 bg-lime-500 hover:bg-lime-400 text-black text-base sm:text-lg font-semibold rounded-lg transition-colors shadow-lg shadow-lime-500/20 font-display"
+                onClick={() => navigate('/apartments')}
+                className="px-8 py-4 bg-[#00FF1A] hover:bg-[#00FF1A]/90 text-black text-base sm:text-lg font-semibold rounded-lg transition-colors shadow-lg shadow-[#00FF1A]/20 font-display"
               >
                 {t('hero.getaway')}
               </motion.button>
@@ -143,7 +155,7 @@ const Hero = () => {
               onClick={() => setPage([index, index - imageIndex])}
               className={`h-1 transition-all duration-300 rounded-full ${
                 imageIndex === index 
-                  ? 'w-12 bg-lime-400' 
+                  ? 'w-12 bg-[#00FF1A]' 
                   : 'w-3 bg-white/30 hover:bg-white/50'
               }`}
               aria-label={`Go to image ${index + 1}`}

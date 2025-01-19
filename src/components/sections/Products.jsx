@@ -7,6 +7,7 @@ import amande from '../../assets/images/amande.png'
 import grape from '../../assets/images/grape.png'
 import honey from '../../assets/images/honey.png'
 import oil2 from '../../assets/images/oil2.png'
+import olive from '../../assets/images/olive.png'
 
 const Products = () => {
   const { t } = useTranslation()
@@ -19,8 +20,8 @@ const Products = () => {
       id: 1,
       titleKey: 'products.almonds.title',
       descriptionKey: 'products.almonds.description',
-      price: 50,
-      unit: '500g',
+      price: 120,
+      unit: 'kg',
       image: amande,
       features: [
         'products.almonds.features.organic',
@@ -34,8 +35,8 @@ const Products = () => {
       id: 4,
       titleKey: 'products.oil.title',
       descriptionKey: 'products.oil.description',
-      price: 80,
-      unit: '750ml',
+      price: 120,
+      unit: '1l',
       image: oil2,
       features: [
         'products.oil.features.extraVirgin',
@@ -77,15 +78,15 @@ const Products = () => {
     },
     {
       id: 5,
-      titleKey: 'products.figs.title',
-      descriptionKey: 'products.figs.description',
+      titleKey: 'products.olives.title',
+      descriptionKey: 'products.olives.description',
       price: 45,
       unit: '500g',
-      image: grape,
+      image: olive,
       features: [
-        'products.figs.features.organic',
-        'products.figs.features.premium',
-        'products.figs.features.fresh'
+        'products.olives.features.organic',
+        'products.olives.features.premium',
+        'products.olives.features.fresh'
       ],
       category: 'fruits',
       stock: 10

@@ -183,6 +183,15 @@
         "premium": "Premium Quality",
         "fresh": "Freshly Picked"
       }
+    },
+    "olives": {
+      "title": "Fresh Olives",
+      "description": "Fresh and delicious olives from our orchards",
+      "features": {
+        "organic": "100% Organic",
+        "premium": "Premium Quality",
+        "fresh": "Freshly Picked"
+      }
     }
   },
   "parcels": {
@@ -275,10 +284,10 @@
   "footer": {
     "contact": {
       "title": "Contact Us",
-      "address": "123 Farm Road",
-      "location": "Rif Region, Morocco",
-      "phone": "Phone: +212 123-456789",
-      "email": "Email: contact@rifland.com"
+      "address": "Al-Aroui",
+      "location": "Nador, Morocco",
+      "phone": "Phone: +212 661-343-472",
+      "email": "Email: asbairifland@gmail.com"
     },
     "quickLinks": {
       "title": "Quick Links",
@@ -295,7 +304,7 @@
       "title": "About RIF LAND",
       "description": "Your perfect destination for relaxation and natural beauty"
     },
-    "rights": "© {{year}} RIF LAND. All rights reserved."
+    "rights": "© RIF LAND. All rights reserved."
   },
   "common": {
     "close": "Close"

@@ -142,7 +142,7 @@ const Contact = () => {
               <div>
                 <button
                   type="submit"
-                  className="w-full bg-black text-white px-6 py-3 rounded-lg hover:bg-lime-600 transform hover:scale-[1.02] transition-all duration-300"
+                  className="w-full bg-black text-white px-6 py-3 rounded-lg hover:bg-primary transform hover:scale-[1.02] transition-all duration-300"
                 >
                   {t('contact.send')}
                 </button>
@@ -156,12 +156,11 @@ const Contact = () => {
             <div className="w-full h-96 rounded-lg overflow-hidden">
               <iframe
                 title="RIF LAND Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3238.840977877516!2d-5.556111684745164!3d35.73494998018365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0b42dd8c7e5c2f%3A0x4e5c1c0c0b0b0b0b!2sRIF%20LAND!5e0!3m2!1sen!2sma!4v1621234567890!5m2!1sen!2sma"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3293.885544368246!2d-3.054298823555756!3d34.98367637297755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd77b3d2b79ad20d%3A0x1f6530a8190d635c!2sFERME%20ASBAI%20RIF%20LAND!5e0!3m2!1sen!2sma!4v1705701693044!5m2!1sen!2sma"
                 className="w-full h-full border-0"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                sandbox="allow-scripts allow-same-origin allow-popups"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
               />
             </div>
 
@@ -170,19 +169,19 @@ const Contact = () => {
               <div>
                 <h3 className="text-xl font-bold text-black mb-2">{t('contact.address')}</h3>
                 <p className="text-gray-600">
-                  Route de Tétouan, Mdiq 93200<br />
-                  Tétouan, Morocco
+                  Al-Aroui<br />
+                  Nador, Morocco
                 </p>
               </div>
 
               <div>
                 <h3 className="text-xl font-bold text-black mb-2">{t('contact.phone')}</h3>
-                <p className="text-gray-600">+212 539-663-900</p>
+                <p className="text-gray-600">+212 661-343-472</p>
               </div>
 
               <div>
                 <h3 className="text-xl font-bold text-black mb-2">{t('contact.email')}</h3>
-                <p className="text-gray-600">contact@rifland.com</p>
+                <p className="text-gray-600">asbairifland@gmail.com</p>
               </div>
 
               <div>
@@ -196,7 +195,7 @@ const Contact = () => {
               <div className="flex space-x-4">
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-lime-600 transform hover:scale-110 transition-all duration-300"
+                  className="text-gray-400 hover:text-primary transform hover:scale-110 transition-all duration-300"
                 >
                   <span className="sr-only">Facebook</span>
                   <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
@@ -209,7 +208,7 @@ const Contact = () => {
                 </a>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-lime-600 transform hover:scale-110 transition-all duration-300"
+                  className="text-gray-400 hover:text-primary transform hover:scale-110 transition-all duration-300"
                 >
                   <span className="sr-only">Instagram</span>
                   <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">

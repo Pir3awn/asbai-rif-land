@@ -33,7 +33,7 @@ const BookableSection = ({
       actions: (
         <button
           onClick={() => handleBook(item)}
-          className="w-full px-4 py-2 text-sm font-medium text-white bg-lime-600 rounded-md hover:bg-lime-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-lime-500"
+          className="w-full px-4 py-2 text-sm font-medium text-black bg-primary rounded-md hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
         >
           {t(`${type}.bookNow`)}
         </button>
@@ -114,4 +114,4 @@ BookableSection.propTypes = {
   background: PropTypes.string
 }
 
-export default BookableSection 
+export default BookableSection

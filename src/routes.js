@@ -14,56 +14,56 @@ export const routes = [
     path: '/',
     component: Hero,
     metadata: {
-      title: 'meta.home.title',
-      description: 'meta.home.description'
+      title: 'hero.welcome',
+      description: 'hero.subtitle'
     }
   },
   {
     path: '/apartments',
     component: Apartments,
     metadata: {
-      title: 'meta.apartments.title',
-      description: 'meta.apartments.description'
+      title: 'apartments.title',
+      description: 'apartments.description'
     }
   },
   {
     path: '/camping',
     component: Camping,
     metadata: {
-      title: 'meta.camping.title',
-      description: 'meta.camping.description'
+      title: 'camping.title',
+      description: 'camping.description'
     }
   },
   {
     path: '/cafe',
     component: Cafe,
     metadata: {
-      title: 'meta.cafe.title',
-      description: 'meta.cafe.description'
+      title: 'cafe.title',
+      description: 'cafe.description'
     }
   },
   {
     path: '/products',
     component: Products,
     metadata: {
-      title: 'meta.products.title',
-      description: 'meta.products.description'
+      title: 'products.title',
+      description: 'products.description'
     }
   },
   {
     path: '/parcels',
     component: Parcels,
     metadata: {
-      title: 'meta.parcels.title',
-      description: 'meta.parcels.description'
+      title: 'parcels.title',
+      description: 'parcels.description'
     }
   },
   {
     path: '/contact',
     component: Contact,
     metadata: {
-      title: 'meta.contact.title',
-      description: 'meta.contact.description'
+      title: 'contact.title',
+      description: 'contact.description'
     }
   }
 ] 

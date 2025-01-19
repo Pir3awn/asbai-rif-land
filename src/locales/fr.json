@@ -239,10 +239,10 @@
   "footer": {
     "contact": {
       "title": "Contactez-nous",
-      "address": "123 Chemin de la Ferme",
-      "location": "Région du Rif, Maroc",
-      "phone": "Téléphone : +212 123-456789",
-      "email": "Email : contact@rifland.com"
+      "address": "Al-Aroui",
+      "location": "Nador, Maroc",
+      "phone": "Téléphone: +212 661-343-472",
+      "email": "Email: contact@rifland.com"
     },
     "quickLinks": {
       "title": "Liens Rapides",
@@ -259,6 +259,6 @@
       "title": "À propos de RIF LAND",
       "description": "Votre destination idéale pour la détente et la beauté naturelle"
     },
-    "rights": "© {{year}} RIF LAND. Tous droits réservés."
+    "rights": "©RIF LAND. Tous droits réservés."
   }
 } 
